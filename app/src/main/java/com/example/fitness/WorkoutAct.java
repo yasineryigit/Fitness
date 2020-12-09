@@ -2,6 +2,7 @@ package com.example.fitness;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.graphics.Typeface;
 import android.os.Bundle;
 import android.view.View;
@@ -12,6 +13,7 @@ import android.widget.TextView;
 
 public class WorkoutAct extends AppCompatActivity {
 
+    Intent i1;
     TextView titlepage, subtitlepage, intropage, subintropage,
             btnexercise, fitonetitle, fitonedesc, fittwotitle, fittwodesc,
             fitthreetitle, fitthreedesc, fitfourtitle, fitfourdesc;
@@ -101,5 +103,11 @@ public class WorkoutAct extends AppCompatActivity {
 
         btnexercise.startAnimation(btteight);
         bgprogress.startAnimation(bttseven);
+    }
+
+    public void startNow(View v){
+        i1 = new Intent (this,StartWorkAct.class);
+        i1.addFlags(i1.FLAG_ACTIVITY_NO_ANIMATION);
+        startActivity(i1);
     }
 }
